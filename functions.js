@@ -82,8 +82,8 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   let index = numbers.indexOf(x);
-  let news = numbers.slice(index + 1, numbers.length);
-  return news;
+  let afteerx = numbers.slice(index + 1, numbers.length);
+  return afteerx;
 }
 // console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
