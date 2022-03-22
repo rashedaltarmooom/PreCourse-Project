@@ -20,6 +20,10 @@
  */
 function sumOdds(numbers) {
   // Your code here
+  const initial = 0;
+  const oddnum = numbers.filter((x) => x & (2 !== 0));
+  const sumOfOdd = oddnum.reduce((i, j) => i + j, initial);
+  return sumOfOdd;
 }
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
@@ -37,7 +41,10 @@ function sumOdds(numbers) {
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  // Your code here
+  const array1 = string.split("");
+  const lowercased = array1.map((name) => name.toLowerCase());
+  const timesC = lowercased.filter((x) => x === c);
+  return timesC.length;
 }
 // console.log(characterCount("Character Count is clever", "c"));
 
@@ -105,7 +112,13 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  // Your code here
+  const array1 = string.split("");
+  array1.filter((x) => x.toUpperCase() !== x);
+  if (array1.length === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // console.log(isUpperCase("JCREW"));
