@@ -42,8 +42,9 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   const array1 = string.split("");
+  const lowerc = c.toLowerCase();
   const lowercased = array1.map((name) => name.toLowerCase());
-  const timesC = lowercased.filter((x) => x === c);
+  const timesC = lowercased.filter((x) => x === lowerc);
   return timesC.length;
 }
 // console.log(characterCount("Character Count is clever", "c"));
@@ -65,7 +66,15 @@ function characterCount(string, c) {
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
 function largestIncrement(numbers) {
-  // Your code here
+  let largest = 0;
+  let temp = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    largest = numbers[i + 1] - numbers[i];
+    if (largest > temp) {
+      temp = largest;
+    }
+  }
+  return temp;
 }
 // console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
@@ -117,13 +126,7 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  const array1 = string.split("");
-  array1.filter((x) => x.toUpperCase() !== x);
-  if (array1.length === 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return !/[a-z]/.test(string) && /[A-Z]/.test(string);
 }
 
 // console.log(isUpperCase("JCREW"));
