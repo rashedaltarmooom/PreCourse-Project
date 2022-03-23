@@ -44,8 +44,8 @@ function characterCount(string, c) {
   const array1 = string.split("");
   const lowerc = c.toLowerCase();
   const lowercased = array1.map((name) => name.toLowerCase());
-  const timesC = lowercased.filter((x) => x === lowerc);
-  return timesC.length;
+  const timesCs = lowercased.filter((x) => x === lowerc);
+  return timesCs.length;
 }
 // console.log(characterCount("Character Count is clever", "c"));
 
